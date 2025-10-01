@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دعوة زفاف</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(to bottom, #fff8e7, #fefefe);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      background: #fff;
+      padding: 30px;
+      border-bottom: 2px solid #e3c36f;
+    }
+    header h1 {
+      font-size: 2.5em;
+      color: #b88a44;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+      margin: 5px 0;
+    }
+    .content {
+      padding: 20px;
+    }
+    .content h2 {
+      color: #b88a44;
+      font-size: 1.8em;
+    }
+    .content p {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+    .rsvp {
+      margin: 20px auto;
+      padding: 15px;
+      background: #fff9f0;
+      border: 1px solid #e3c36f;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+    }
+    .rsvp input, .rsvp button {
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    .rsvp button {
+      background: #b88a44;
+      color: #fff;
+      cursor: pointer;
+    }
+    .rsvp button:hover {
+      background: #a37733;
+    }
+    marquee {
+      margin-top: 30px;
+      padding: 10px;
+      background: #b88a44;
+      color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #fff;
+      border-top: 2px solid #e3c36f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- تم تعديل رابط الأغنية ليعمل من Google Drive (رابط تحميل مباشر) -->
+  <audio autoplay loop controls>
+    <source src="https://drive.google.com/uc?export=download&id=1z3ms3Sr_w2rsFqWyid6hIYXVWhMhZxoo" type="audio/mpeg">
+    متصفحك لا يدعم تشغيل الصوت.
+  </audio>
+
+  <header>
+    <h1>💍 دعوة زفاف 💍</h1>
+    <p>ندعوكم بكل سرور لحضور حفل زفافنا</p>
+  </header>
+
+  <div class="content">
+    <h2>العروس & العريس</h2>
+    <!-- تم حذف السطر الخاص بـ "نحن، عابدة و أحمد، يسعدنا مشاركتكم فرحتنا في هذا اليوم المميز." -->
+    <p><strong>📅 التاريخ:</strong> الجمعة 25 أكتوبر 2025</p>
+    <p><strong>🕗 الوقت:</strong> الساعة 8 مساءً</p>
+    <p><strong>📍 المكان:</strong> قاعة السعادة - الرياض</p>
+
+    <hr style="margin:20px 0;">
+
+    <h2>Bride & Groom</h2>
+    <p>We, Abeda & Ahmed, are delighted to invite you to share our joy.</p>
+    <p><strong>📅 Date:</strong> Friday, 25th October 2025</p>
+    <p><strong>🕗 Time:</strong> 8:00 PM</p>
+    <p><strong>📍 Venue:</strong> Al-Saada Hall - Riyadh</p>
+  </div>
+
+  <div class="rsvp">
+    <h3>تأكيد الحضور / RSVP</h3>
+    <input type="text" id="guestName" placeholder="اكتب اسمك / Your name">
+    <button onclick="confirmAttendance()">تأكيد / Confirm</button>
+    <p id="rsvpMessage"></p>
+  </div>
+
+  <marquee id="greetings">أهلاً بكم في حفلنا 💕</marquee>
+
+  <footer>
+    <p>شكرًا لمشاركتكم فرحتنا ✨ | Thank you for sharing our joy ✨</p>
+  </footer>
+
+  <script>
+    function confirmAttendance() {
+      const name = document.getElementById("guestName").value;
+      if (name.trim() !== "") {
+        document.getElementById("rsvpMessage").innerText = "✅ شكراً " + name + "! تم تأكيد حضورك.";
+        const greetings = document.getElementById("greetings");
+        greetings.innerHTML += " | 🎉 تهنئة من " + name + " 💕";
+        document.getElementById("guestName").value = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
